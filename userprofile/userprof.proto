@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+service CreateUser{
+    rpc HandleProfReq(ProfReq) returns (UserProf);
+}
+
+message ProfReq{
+    string Fname = 1;
+    string Lname = 2;
+    string Dob = 3;
+    repeated Hobbies Hobby = 4;
+}
+
+message UserProf{
+    ProfReq Prof = 1;
+    RestraCoin Rc = 2;
+}
+
+message Hobbies{
+    string Name = 1;
+    string Description = 2;
+}
+
+message RestraCoin{
+    int64 Coin = 1;
+}
